@@ -1,4 +1,4 @@
-# Project Name
+# Weblar Project
 
 A web application for user authentication, allowing users to register and log in to access personalized tasks and weather updates. This project uses modern web development technologies to provide a seamless user experience.
 
