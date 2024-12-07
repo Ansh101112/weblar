@@ -27,9 +27,12 @@ export default function TasksPage() {
           return;
         }
 
-        const response = await axios.get("http://localhost:5000/api/tasks", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const response = await axios.get(
+          "https://weblar-backend-pdm6.onrender.com/api/tasks",
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
         setTasks(response.data);
       } catch (error) {
         console.error("Error fetching tasks:", error);
@@ -52,7 +55,7 @@ export default function TasksPage() {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:5000/api/tasks",
+        "https://weblar-backend-pdm6.onrender.com/api/tasks",
         formData,
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -74,9 +77,12 @@ export default function TasksPage() {
     setTaskLoading(true);
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:5000/api/tasks/${taskId}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      await axios.delete(
+        `https://weblar-backend-pdm6.onrender.com/api/tasks/${taskId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       setTasks(tasks.filter((task) => task._id !== taskId));
 
       toast.success("Task deleted successfully!");

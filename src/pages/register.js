@@ -30,7 +30,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/signup",
+        "https://weblar-backend-pdm6.onrender.com/api/auth/signup",
         {
           name,
           email,
